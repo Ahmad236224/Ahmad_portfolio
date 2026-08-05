@@ -138,12 +138,13 @@ const PROJECTS = [
   {
     title: "Leasy Link",
     sub: "Leasing suite — mobile + admin",
-    role: "Full Stack Developer",
+    role: "Product Designer & Full Stack Developer",
     year: "2025",
     tags: ["Mobile Apps", "Full-Stack Web"],
     links: [],
     stack: ["Flutter", "Riverpod", "Node.js", "Express", "TypeScript", "Prisma", "PostgreSQL 16", "Next.js Admin", "pdf-lib"],
     points: [
+      "Designed the mobile and admin experiences, from user flows through polished responsive interfaces.",
       "Cross-platform mobile app paired with a Next.js admin portal.",
       "Row-level security in PostgreSQL 16 for strict tenant isolation.",
       "Automated PDF signature stamping via Puppeteer and pdf-lib.",
@@ -243,6 +244,15 @@ const SKILLS = [
       { name: "Firebase", level: 87 }, { name: "MySQL", level: 85 },
       { name: "Prisma", level: 85 }, { name: "Render", level: 85 },
       { name: "AWS EC2/S3/SES", level: 80 }, { name: "GCP", level: 78 },
+    ],
+  },
+  {
+    category: "Product & UI Design",
+    items: [
+      { name: "UI/UX Design", level: 92 }, { name: "Interface Design", level: 92 },
+      { name: "Responsive Design", level: 94 }, { name: "Wireframing", level: 88 },
+      { name: "Prototyping", level: 87 }, { name: "Design Systems", level: 85 },
+      { name: "User Flows", level: 88 },
     ],
   },
 ];
@@ -357,12 +367,15 @@ const CSS = `
 .bar-nav button:hover{transform:translateZ(26px) rotateX(-12deg)}
 .bar-nav button:hover::after,.bar-nav button.on::after{width:100%}
 .ar .talk{
-  display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:var(--paper);
+  display:inline-flex;align-items:center;gap:7px;
+  background:var(--signal);color:var(--paper);
   font-family:var(--disp);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
-  padding:11px 18px;border-radius:999px;transform-style:preserve-3d;
+  padding:11px 18px;border:1px solid rgba(16,16,16,.12);border-radius:999px;
+  box-shadow:0 8px 22px -14px rgba(192,67,46,.9);
+  transform-style:preserve-3d;
   transition:transform .5s var(--ease),background .3s,box-shadow .5s var(--ease);
 }
-.ar .talk:hover{background:var(--signal);color:var(--paper);transform:translateZ(34px) rotateX(-10deg);box-shadow:0 16px 30px -14px rgba(16,16,16,.6)}
+.ar .talk:hover{background:#A73726;color:var(--paper);transform:translateZ(34px) rotateX(-10deg);box-shadow:0 16px 30px -14px rgba(192,67,46,.85)}
 @media(max-width:900px){.bar-status,.bar-nav{display:none}.bar{justify-content:space-between}.bar-brand{display:block!important}}
 .bar-brand{display:none;font-family:var(--disp);font-size:13px;letter-spacing:.1em}
 
@@ -552,21 +565,22 @@ const CSS = `
 .filters button.on{background:var(--ink);border-color:var(--ink);color:var(--paper);transform:translateZ(30px);box-shadow:0 18px 26px -18px rgba(16,16,16,.8)}
 
 /* ─────────────────────────────────────────────
-   stack as four folded panels
+   skills as five folded panels
    ───────────────────────────────────────────── */
-.stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;perspective:1800px}
-@media(max-width:1000px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
+.stack-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;perspective:1800px}
+@media(max-width:1100px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.stack-grid{grid-template-columns:1fr}}
 .stack-col{
   padding:26px 22px;border:1px solid var(--rule);margin:0 -.5px;background:var(--paper);
   transform-style:preserve-3d;transition:transform .8s var(--ease),box-shadow .8s var(--ease),background .5s;
 }
-.stack-col:nth-child(1){transform:rotateY(9deg)}
-.stack-col:nth-child(2){transform:rotateY(3deg)}
-.stack-col:nth-child(3){transform:rotateY(-3deg)}
-.stack-col:nth-child(4){transform:rotateY(-9deg)}
+.stack-col:nth-child(1){transform:rotateY(12deg)}
+.stack-col:nth-child(2){transform:rotateY(6deg)}
+.stack-col:nth-child(3){transform:rotateY(0deg)}
+.stack-col:nth-child(4){transform:rotateY(-6deg)}
+.stack-col:nth-child(5){transform:rotateY(-12deg)}
 .stack-col:hover{transform:rotateY(0deg) translateZ(56px);box-shadow:0 44px 60px -44px rgba(16,16,16,.7);z-index:2;background:var(--paper)}
-@media(max-width:1000px){.stack-col:nth-child(n){transform:none}.stack-col:hover{transform:translateZ(40px)}}
+@media(max-width:1100px){.stack-col:nth-child(n){transform:none}.stack-col:hover{transform:translateZ(40px)}}
 .stack-cat{font-family:var(--disp);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
 .sk{margin-bottom:15px}
 .sk-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
@@ -999,7 +1013,7 @@ function Stack() {
   return (
     <section id="stack" className="sec">
       <div className="wrap">
-        <SectionHead idx="04 /" title="Tech Stack" note="Four folded panels — hover one to bring it forward." />
+        <SectionHead idx="04 /" title="Skills & Tools" note="Five folded panels — hover one to bring it forward." />
         <div className="stack-grid" ref={ref}>
           {SKILLS.map((g, gi) => (
             <div className="stack-col" key={g.category}>
