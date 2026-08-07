@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 /* ═══════════════════════════════════════════════════════════════
-   ASSETS — served from /public (see public/fonts and public/portrait)
+   ASSETS: served from /public (see public/fonts and public/portrait)
    ═══════════════════════════════════════════════════════════════ */
 const F_TEXAR = "/fonts/texar.woff2";
 const F_LIGHT = "/fonts/lakes-light.woff2";
@@ -27,13 +27,13 @@ const PROFILE = {
   first: "AHMAD",
   last: "RIAZ",
   role: "Full-Stack Developer",
-  tagline: "Building production web, mobile and AI systems that ship — and keep shipping.",
+  tagline: "Building production web, mobile and AI systems that ship, and keep shipping.",
   location: "Lahore, Pakistan",
   email: "ahmi2662@gmail.com",
   phone: "+92 323 7277228",
   linkedin: "https://linkedin.com/in/ahmad-riaz-a3ab22310",
   bio:
-    "I'm a full-stack developer and hands-on AI builder with professional experience shipping production web and mobile products. I work daily with agentic AI workflows — Claude, Cursor, Lovable, ChatGPT, Gemini — on top of a solid computer science foundation (BSCS, University of Lahore).",
+    "I'm a full-stack developer and hands-on AI builder with professional experience shipping production web and mobile products. I work daily with agentic AI workflows including Claude, Cursor, Lovable, ChatGPT and Gemini, on top of a solid computer science foundation (BSCS, University of Lahore).",
 };
 
 const STATS = [
@@ -50,7 +50,7 @@ const MARQUEE = [
 
 const EXPERIENCE = [
   {
-    period: "Dec 2025 — Present",
+    period: "Dec 2025 to Present",
     company: "QuisHub",
     role: "Full Stack Developer",
     current: true,
@@ -61,7 +61,7 @@ const EXPERIENCE = [
     stack: ["React", "Next.js", "Node.js", "PostgreSQL", "Claude", "Cursor"],
   },
   {
-    period: "Mar 2023 — Aug 2023",
+    period: "Mar 2023 to Aug 2023",
     company: "Cloud Service Group",
     role: "Front-End Developer",
     current: false,
@@ -137,7 +137,7 @@ const PROJECTS = [
   },
   {
     title: "Leasy Link",
-    sub: "Leasing suite — mobile + admin",
+    sub: "Leasing suite: mobile + admin",
     role: "Product Designer & Full Stack Developer",
     year: "2025",
     tags: ["Mobile Apps", "Full-Stack Web"],
@@ -162,20 +162,6 @@ const PROJECTS = [
       "Cross-platform app matching clients with lawyers.",
       "Real-time chat and appointment scheduling.",
       "Web admin dashboard with live analytics.",
-    ],
-  },
-  {
-    title: "Futter",
-    sub: "Cross-platform mobile app",
-    role: "Full Stack Developer",
-    year: "2024",
-    tags: ["Mobile Apps"],
-    links: [],
-    stack: ["React Native", "Node.js", "Express", "Cloud Storage", "OAuth", "JWT", "Microservices"],
-    points: [
-      "Fluid, animation-led mobile experience.",
-      "Microservice backend with independent deploy paths.",
-      "Secure JWT and OAuth authentication.",
     ],
   },
   {
@@ -308,7 +294,7 @@ const CSS = `
 }
 
 /* ─────────────────────────────────────────────
-   3D ground plane — a real receding wireframe
+   3D ground plane: a real receding wireframe
    ───────────────────────────────────────────── */
 .floor{position:fixed;inset:auto 0 0 0;height:52vh;z-index:0;pointer-events:none;perspective:420px;perspective-origin:50% 0%;overflow:hidden;opacity:.5}
 .floor i{
@@ -380,7 +366,7 @@ const CSS = `
 .bar-brand{display:none;font-family:var(--disp);font-size:13px;letter-spacing:.1em}
 
 /* ─────────────────────────────────────────────
-   HERO — a single 3D stage
+   HERO: a single 3D stage
    ───────────────────────────────────────────── */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:96px;z-index:1}
 .hero-hint{
@@ -590,7 +576,7 @@ const CSS = `
 .sk-bar i{position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--ink);transition:width 1s var(--ease)}
 
 /* ─────────────────────────────────────────────
-   contact — extruded headline
+   contact: extruded headline
    ───────────────────────────────────────────── */
 .contact-stage{perspective:1400px}
 .contact-3d{
@@ -771,7 +757,7 @@ function Hero({ go }) {
     return () => (window.removeEventListener("mousemove", onMove), cancelAnimationFrame(raf));
   }, []);
 
-  /* one <span> per Z step — the extrusion is real geometry, not a shadow */
+  /* one <span> per Z step; the extrusion is real geometry, not a shadow */
   const nameLayers = Array.from({ length: NAME_LAYERS }, (_, i) => {
     const t = i / (NAME_LAYERS - 1);
     return (
@@ -808,7 +794,7 @@ function Hero({ go }) {
             <div className="marks">
               <span className="mark tl" /><span className="mark tr" />
               <span className="mark bl" /><span className="mark br" />
-              <span className="mark-lbl">AR — LHR / PK — MMXXVI</span>
+              <span className="mark-lbl">AR / LHR / PK / MMXXVI</span>
             </div>
           </div>
         </div>
@@ -866,7 +852,7 @@ function Profile() {
         <div className="profile-grid">
           <Rv>
             <p className="statement">
-              I build the whole thing — <em>frontend, backend, database, deployment</em> — and I build it fast, because AI agents are part of my daily workflow, not a demo.
+              I build the whole thing: <em>frontend, backend, database and deployment</em>. I build it fast because AI agents are part of my daily workflow, not a demo.
             </p>
             <p className="bio">{PROFILE.bio}</p>
           </Rv>
@@ -903,7 +889,7 @@ function Experience() {
               <span className="row-num">{String(i + 1).padStart(2, "0")}</span>
               <div>
                 <h3 className="row-title">{j.company}</h3>
-                <span className="row-sub">{j.role} — {j.points[0]}</span>
+                <span className="row-sub">{j.role}: {j.points[0]}</span>
                 <div className="chips" style={{ marginTop: 14 }}>
                   {j.stack.map((t) => <span className="chip" key={t}>{t}</span>)}
                 </div>
@@ -940,7 +926,7 @@ function Work() {
   return (
     <section id="work" className="sec">
       <div className="wrap">
-        <SectionHead idx="03 /" title="Selected Work" note="Telephony, marketplaces, legal tech and logistics — each shipped end to end." />
+        <SectionHead idx="03 /" title="Selected Work" note="Telephony, marketplaces, legal tech and logistics, each shipped end to end." />
 
         <Rv className="filters">
           {FILTERS.map((f) => (
@@ -1013,7 +999,7 @@ function Stack() {
   return (
     <section id="stack" className="sec">
       <div className="wrap">
-        <SectionHead idx="04 /" title="Skills & Tools" note="Five folded panels — hover one to bring it forward." />
+        <SectionHead idx="04 /" title="Skills & Tools" note="Five folded panels. Hover one to bring it forward." />
         <div className="stack-grid" ref={ref}>
           {SKILLS.map((g, gi) => (
             <div className="stack-col" key={g.category}>
@@ -1103,7 +1089,7 @@ function Contact() {
 
         <Rv delay={120} className="contact-grid">
           <button className="cbox" onClick={copy}>
-            <span className="k">{copied ? <Check size={12} /> : <Copy size={12} />} {copied ? "Copied" : "Email — tap to copy"}</span>
+            <span className="k">{copied ? <Check size={12} /> : <Copy size={12} />} {copied ? "Copied" : "Email: tap to copy"}</span>
             <span className="v">{PROFILE.email}</span>
           </button>
           <a className="cbox" href={`tel:${PROFILE.phone.replace(/\s/g, "")}`}>
