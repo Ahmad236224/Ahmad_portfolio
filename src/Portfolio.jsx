@@ -13,7 +13,7 @@ const F_LIGHT = "/fonts/lakes-light.woff2";
 const F_REG = "/fonts/lakes-regular.woff2";
 const F_MED = "/fonts/lakes-medium.woff2";
 const F_BOLD = "/fonts/lakes-bold.woff2";
-const PORTRAIT = "/portrait.webp";
+const PORTRAIT = "/portrait.png";
 
 /* depth of the extruded type + portrait relief */
 const NAME_LAYERS = 14;
