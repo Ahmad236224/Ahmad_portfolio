@@ -90,7 +90,11 @@ const WORK_SHOTS = {
   ],
   "Leasy Link": LEASY_SCREENS,
   Nimdio: null,
-  "Postal Solutions": null,
+  "Postal Solutions": [
+    { src: "/work/postal-step1.webp", alt: "Postal Solutions resident flow, step 1: find your apartment", w: 1440, h: 900 },
+    { src: "/work/postal-step2.webp", alt: "Postal Solutions resident flow, step 2: choose move type", w: 1440, h: 900 },
+    { src: "/work/postal-admin.webp", alt: "Postal Ops admin overview: batch countdown, volume chart, tonight's batch preview", w: 1428, h: 1097, wide: true },
+  ],
   Digitales: [
     { src: "/work/digitales-home.webp", alt: "Digitales homepage hero with free audit entry", w: 1600, h: 1000 },
     { src: "/work/digitales-audit.webp", alt: "Digitales audit results: health score, Core Web Vitals, dimension breakdown", w: 1600, h: 1000 },
